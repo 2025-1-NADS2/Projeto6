@@ -1,6 +1,24 @@
-.header
-{
-    background-color: #507687;
-    text-align: center;
-    padding:30px;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    font-family: sans-serif;
+    text-decoration:none;
+}
+
+.header{
+    background: #b92a2a;
+    padding-inline: 16px;
+}
+
+.nav{
+    max: 1280px;
+    height: 70px;
+    margin-inline: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
