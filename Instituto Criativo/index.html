@@ -1,25 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <link rel = "stylesheet" href = "style.css">
-    <script defer src= "app.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instituto Criativo</title>
-    <link rel = "icon" type = "image/x-icon" href="/images/favicon.ico">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <title>Instituto Criativo</title>
+        <link rel="stylesheet" href="style.css">
+        <script defer src="script.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <a href="/">asd</a>
-            <ul class = "nav-list">
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Projetos</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
+    <header>
+        <button id="menu-toggle" class="menu-btn">☰</button>
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <span>Instituto Criativo</span>
+        </div>
+        <div class="profile">
+            <span class="profile-icon">F</span>
+        </div>
     </header>
-    <main class = "hero"></main>
+    
+    <nav id="sidebar">
+        <button id="close-menu" class="close-btn">×</button>
+        <ul>
+            <li><a href="#">Sobre nós</a></li>
+            <li><a href="#">Segmento</a></li>
+            <li><a href="#">Impacto</a></li>
+            <li><a href="#">Colaboradores</a></li>
+            <li><a href="#">Marcas</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Conteúdo principal -->
+    </main>
+
+    <div class="floating-icons">
+        <i class="fas fa-user"></i>
+        <i class="fab fa-whatsapp"></i>
+    </div>
 </body>
 </html>

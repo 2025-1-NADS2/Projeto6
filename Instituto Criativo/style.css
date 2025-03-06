@@ -1,46 +1,116 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-a {
-    font-family: sans-serif;
-    text-decoration:none;
-}
-
-.header{
-    background: #507687;
-    padding-inline: 16px;
-}
-
-.logo
-{
-    font-size: 48px;
-}
-.nav{
-    max-width: 1280px;
-    height: 70px;
-    margin-inline: auto;
-
+body {
     display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #e5e1dc;
+}
+
+header {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    background-color: #436475;
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo {
+    display: flex;
     align-items: center;
 }
-.nav-list
-{
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to right, red, green);
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    border-radius: 50%;
     display: flex;
-    gap: 32px;
-    list-style: none
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.nav-list a{
+.menu-btn, .close-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #436475;
+    padding-top: 20px;
+    transition: 0.3s;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 10px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
     font-size: 18px;
-    color: #fff;
-    padding-block: 16px;
-
+    display: block;
 }
 
-.hero
-{
-    background-color: #ECE9E2;
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.close-btn {
+    display: block;
+    text-align: right;
+    padding-right: 20px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.floating-icons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.floating-icons i {
+    font-size: 24px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0px 0px 5px gray;
+    cursor: pointer;
 }
