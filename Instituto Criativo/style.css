@@ -24,6 +24,7 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    margin: auto;
 }
 
 .logo-icon {
@@ -48,11 +49,15 @@ header {
 }
 
 .menu-btn, .close-btn {
+    position: absolute;
+    top: 10px;  /* Ajuste fino para alinhar corretamente */
+    left: 15px; /* Mantém a mesma posição */
     font-size: 24px;
     background: none;
     border: none;
     color: white;
     cursor: pointer;
+    /* Garante que fique acima de outros elementos */
 }
 
 nav {
@@ -68,11 +73,12 @@ nav {
 
 nav ul {
     list-style: none;
-    padding: 0;
+    padding: 10px;
+    padding-top: 50px
 }
 
 nav ul li {
-    padding: 10px 20px;
+    padding: 20px 50px;
 }
 
 nav ul li a {
