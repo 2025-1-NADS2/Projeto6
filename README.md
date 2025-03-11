@@ -36,4 +36,7 @@ Para atender a essa necessidade, está sendo desenvolvido um novo site instituci
 <p>O sistema será desenvolvido com tecnologias modernas, utilizando .NET para o backend, React para a interface de usuário e MySQL para armazenamento de dados, assegurando um ambiente robusto e escalável. Além disso, o portal terá um sistema de login e controle de acesso, garantindo que apenas administradores possam visualizar informações sensíveis.
 Com essa inovação, o Instituto Criativo dará um salto tecnológico, fortalecendo sua atuação e garantindo uma gestão mais eficiente, colaborativa e transparente. O impacto esperado é uma organização mais dinâmica e preparada para expandir suas iniciativas, promovendo um ambiente de aprendizado e transformação para todos os envolvidos.</p>
 
+<p align="center">
+ <img src="https://github.com/user-attachments/assets/0040ebea-0fac-49c3-800f-a4504b36dfba" alt="Page Inicial" width="1000"/> </p>
+
 # 🛠 Estrutura de Pasta
