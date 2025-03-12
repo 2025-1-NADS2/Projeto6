@@ -40,4 +40,3 @@ Este sistema foi desenvolvido para gerenciar eventos e projetos dentro de uma or
 ## Código
 
 O código-fonte completo pode ser encontrado no arquivo [main](src/Back-End/Entrega 1/Programação Orientada a Objetos/main.cs).
-
