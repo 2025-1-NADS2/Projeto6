@@ -1,4 +1,4 @@
-# Algoritmos e Estrutura de Dados - Entrega AED
+# Entrega AED
 
 ## 📌 Descrição do Projeto
 Este projeto implementa um **algoritmo de ordenação** para gerenciar eventos dentro de um **dashboard administrativo**. A estrutura permite o cadastro e organização de eventos (atividades, palestras, workshops, cursos) com base na data, garantindo uma visualização eficiente no sistema.
