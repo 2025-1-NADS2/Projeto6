@@ -33,8 +33,8 @@ O redesign foi desenvolvido utilizando **Figma**, onde foram aplicadas melhores 
 
 ---
 
-## 🎯 Link do Projeto para melhor visualização
-- Clique aqui para acessar(https://www.figma.com/design/7IxXOJHDldFlepcm31zm9x/Untitled?node-id=10-2&t=3zeYtCB2fTN7QQC0-1)
+## 🔗 Link do Projeto para melhor visualização
+- [Clique aqui para acessar](https://www.figma.com/design/7IxXOJHDldFlepcm31zm9x/Untitled?node-id=10-2&t=3zeYtCB2fTN7QQC0-1)
 ---
 
 🚀 **Desenvolvido com Figma | Projeto de atualização do Instituto Criativo**
