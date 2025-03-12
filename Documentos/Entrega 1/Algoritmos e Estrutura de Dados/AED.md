@@ -45,10 +45,10 @@ Workshop de Design - 15/04/2025 - Online - 120 participantes
 ```
 
 ## 🚀 Como Executar o Projeto
-1. [Clique aqui para acessar a pasta do codigo]
+1. [Clique aqui para acessar a pasta do codigo](https://github.com/2025-1-NADS2/Projeto6/blob/main/src/Back-End/Entrega%201/Algoritmos%20e%20Estrutura%20de%20Dados/ListaOrdenada.cs)
 2. Abra o projeto em um ambiente C# (.NET).
 3. Compile e execute `ListaOrdenada.cs`.
 4. Siga as instruções do menu interativo para testar as funcionalidades.
 
 ---
-📌 **Observação**: Este sistema faz parte do **dashboard do Instituto Criativo**, onde será usado para gerenciar eventos e arrecadações. Somente administradores terão acesso ao painel de gerenciamento.
+📌 **Observação**: Este sistema faz parte do **dashboard do Instituto Criativo (que ainda será feito em breve, pois focamos mais no Front-End)**, onde será usado para gerenciar eventos e arrecadações. Somente administradores terão acesso ao painel de gerenciamento.
