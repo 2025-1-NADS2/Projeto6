@@ -31,8 +31,6 @@ O redesign foi desenvolvido utilizando **Figma**, onde foram aplicadas melhores 
 
 ---
 
----
-
 ## 🔗 Links do Projeto para melhor visualização
 - [Clique aqui para acessar o Figma do site](https://www.figma.com/design/7IxXOJHDldFlepcm31zm9x/Untitled?node-id=10-2&t=3zeYtCB2fTN7QQC0-1)
 - [Clique aqui para acessar o Fuxograma do site](https://www.figma.com/board/rf7Z7iUSzP0gfEvtA5WKTv/Untitled?t=aI4aSrlhla8mDnTO-6)
