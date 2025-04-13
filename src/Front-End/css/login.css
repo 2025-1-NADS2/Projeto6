@@ -6,7 +6,7 @@
   }
   
   body {
-    background: url("Imagens/pexels-chrisjohn-31464028.jpg") no-repeat center top;
+    background: url("/src/Front-End/Imagens/pexels-chrisjohn-31464028.jpg") no-repeat center top;
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
