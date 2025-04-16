@@ -1,36 +1,44 @@
-const express = require("express");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const helmet = require("helmet");
-const compression = require("compression");
-const rateLimit = require("express-rate-limit");
-const sequelize = require("./config/db");
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import helmet from "helmet";
+import compression from "compression";
+import rateLimit from "express-rate-limit";
+import sequelize from "./config/db.js";
+
+import authRoutes from "./routes/authRoutes.js";
+import eventoRoutes from "./routes/eventoRoutes.js";
 
 dotenv.config();
 
 const app = express();
-
-// Middlewares globais
+//middlewares globais
 app.use(cors());
 app.use(helmet());
 app.use(compression());
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
+// Rotas
+app.use("/auth", authRoutes);
+app.use("/eventos", eventoRoutes);
+
 // Rate Limiter
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutos
-  max: 100, // limite por IP
+  windowMs: 15 * 60 * 1000,
+  max: 100,
 });
 app.use(limiter);
 
-// Teste de rota raiz
+// Teste
 app.get("/", (req, res) => {
-  res.send("API está funcionando! 🚀");
+  res.send("API está funcionando!");
 });
 
-// Iniciar servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
+
+
+
