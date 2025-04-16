@@ -1,26 +1,36 @@
-import multer from 'multer'
-import path from 'path'
+import multer from "multer";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Configura o caminho para a pasta de uploads
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads/')
-    },
-    filename: (req, file, cb) => {
-        const ext = path.extname(file.originalname)
-        const name = `${Date.now()}-${Math.floor(Math.random() * 1E9)}${ext}`
-        cb(null, name)
-    }
-})
-
-const fileFilter = (req, file, cb) => {
-    const allowed = ['image/jpeg', 'image/png', 'image/jpg']
-    allowed.includes(file.mimetype) ? cb(null, true) : cb(new Error('Arquivo inválido'))
-}
+  destination: (req, file, cb) => {
+    cb(null, path.resolve(__dirname, "uploads"));
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(null, uniqueSuffix + path.extname(file.originalname));
+  }
+});
 
 const upload = multer({
-    storage,
-    fileFilter,
-    limits: { fileSize: 2 * 1024 * 1024 } // 2MB
-})
+  storage,
+  limits: {
+    fileSize: 5 * 1024 * 1024 // 5MB em bytes
+  },
+  fileFilter: (req, file, cb) => {
+    const fileTypes = /jpeg|jpg|png/;
+    const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
+    const mimetype = fileTypes.test(file.mimetype);
+    if (extname && mimetype) {
+      return cb(null, true);
+    }
+    cb(new Error("Apenas imagens JPEG, JPG e PNG são permitidas."));
+  }
+});
 
-export default upload
+export default upload;
+
