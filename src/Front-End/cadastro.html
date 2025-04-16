@@ -37,39 +37,23 @@
       </div>
 
       <!-- Coluna Direita -->
-      <div class="form-coluna">
-        <input type="text" placeholder="Celular" />
-        <input type="number" placeholder="Idade" />
-        <input type="text" placeholder="Estado" />
-        <input type="text" placeholder="Cidade" />
+<div class="form-coluna">
+  <input type="text" placeholder="Celular" />
+  <input type="date" id="dataNascimento" name="dataNascimento" />
+  <input type="text" placeholder="Estado" />
+  <input type="text" placeholder="Cidade" />
 
-        <!-- Campos Dinâmicos de Perfil -->
-        <div class="perfil-info" data-perfil="professor">
-          <input type="text" placeholder="Disciplinas" />
-          <input type="text" placeholder="Turma" />
-        </div>
+  <!-- Campos Dinâmicos de Perfil -->
+  <div class="perfil-info" data-perfil="voluntario">
+    <input type="text" placeholder="Área de atuação" />
+    <input type="text" placeholder="Disponibilidade" />
+  </div>
+</div>
 
-        <div class="perfil-info" data-perfil="voluntario">
-          <input type="text" placeholder="Área de atuação" />
-          <input type="text" placeholder="Disponibilidade" />
-        </div>
-
-        <div class="perfil-info" data-perfil="gestor">
-          <input type="text" placeholder="Unidade" />
-          <input type="text" placeholder="Equipes Gerenciadas" />
-        </div>
-
-        <div class="perfil-info" data-perfil="administrador">
-          <input type="number" placeholder="Total de acessos" />
-          <input type="text" placeholder="Funções críticas" />
-        </div>
-      </div>
-
-      <!-- Botão -->
-      <div class="botao-container">
-        <button type="submit">Enviar</button>
-        
-      </div>
+<!-- Botão fora da coluna -->
+<div class="botao-container">
+  <button type="submit">Enviar</button>
+</div>
     </form>
   </main>
 
