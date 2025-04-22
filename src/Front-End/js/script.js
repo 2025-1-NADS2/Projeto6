@@ -31,3 +31,74 @@ window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 0);
 });
+
+// carrossel
+document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let currentIndex = 0;
+    const intervalTime = 5000; // 5 segundos
+    
+    // Função para mudar slide
+    function nextSlide() {
+        items[currentIndex].classList.remove('active');
+        dots[currentIndex].classList.remove('active');
+        
+        currentIndex = (currentIndex + 1) % items.length;
+        
+        items[currentIndex].classList.add('active');
+        dots[currentIndex].classList.add('active');
+    }
+    
+    // Iniciar autoplay
+    let carouselInterval = setInterval(nextSlide, intervalTime);
+    
+    // Pausar ao passar o mouse
+    const carousel = document.querySelector('.carousel');
+    carousel.addEventListener('mouseenter', () => {
+        clearInterval(carouselInterval);
+    });
+    
+    // Retomar autoplay
+    carousel.addEventListener('mouseleave', () => {
+        carouselInterval = setInterval(nextSlide, intervalTime);
+    });
+    
+    // Navegação pelos dots
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            const dotIndex = parseInt(this.getAttribute('data-index'));
+            
+            items[currentIndex].classList.remove('active');
+            dots[currentIndex].classList.remove('active');
+            
+            currentIndex = dotIndex;
+            
+            items[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
+            
+            // Reiniciar intervalo
+            clearInterval(carouselInterval);
+            carouselInterval = setInterval(nextSlide, intervalTime);
+        });
+    });
+});
+
+// Verificar se é mobile
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
+// Ajustar altura do carrossel em mobile
+function adjustCarouselHeight() {
+    const hero = document.querySelector('.hero');
+    if (isMobile()) {
+        hero.style.height = `${window.innerHeight * 0.7}px`;
+    } else {
+        hero.style.height = '';
+    }
+}
+
+// Inicializar
+window.addEventListener('load', adjustCarouselHeight);
+window.addEventListener('resize', adjustCarouselHeight);

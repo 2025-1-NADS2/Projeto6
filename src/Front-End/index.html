@@ -16,149 +16,181 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <img src="assets/logo.png" alt="Instituto Criativo" class="logo">
-
-            <!-- Menu Desktop (mantido para telas maiores) -->
+            <a href="#" class="logo-link">
+                <img src="https://www.institutocriativo.com.br/images/Logo.svg" alt="Instituto Criativo" class="logo">
+            </a>
+            <!-- Navegação Desktop -->
             <nav class="desktop-nav">
-                <a href="#sobre">Sobre</a>
-                <a href="#segmentos">Segmento</a>
-                <a href="#impacto">Impacto Social</a>
-                <a href="#cursos">Cursos/Eventos</a>
-                <a href="#equipe">Colaboradores</a>
-                <a href="#marcas">Marcas</a>
-                <a href="#contato">Contato</a>
-                <div class="nav-buttons">
+                <ul class="main-nav">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#segmentos">Segmento</a></li>
+                    <li><a href="#impacto">Impacto</a></li>
+                    <li><a href="#cursos">Cursos/Eventos</a></li>
+                    <li><a href="#equipe">Colaboradores</a></li>
+                    <li><a href="#marcas">Marcas</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <div class="nav-actions">
                     <a href="#" class="btn btn-primary">Faça uma doação</a>
-                    <a href="#" class="btn btn-secondary">Quero ser criativo</a>
+                    <a href="#" class="btn btn-secondary">Entrar</a>
                 </div>
             </nav>
 
-            <!-- Botão Hambúrguer -->
-            <div class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </div>
+            <!-- Menu Hambúrguer -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span class="menu-icon"></span>
+            </button>
         </div>
-
-        <!-- Menu Mobile -->
-        <nav class="mobile-nav" id="mobileNav">
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#segmentos">Segmento</a></li>
-                <li><a href="#impacto">Impacto Social</a></li>
-                <li><a href="#cursos">Cursos/Eventos</a></li>
-                <li><a href="#equipe">Colaboradores</a></li>
-                <li><a href="#marcas">Marcas</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-            <div class="nav-buttons">
-                <a href="#" class="btn btn-primary">Faça uma doação</a>
-                <a href="#" class="btn btn-secondary">Quero ser criativo</a>
-            </div>
-        </nav>
     </header>
+    <!-- Navegação Mobile -->
+    <nav class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#segmentos">Segmento</a></li>
+            <li><a href="#impacto">Impacto</a></li>
+            <li><a href="#cursos">Cursos/Eventos</a></li>
+            <li><a href="#equipe">Colaboradores</a></li>
+            <li><a href="#marcas">Marcas</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <a href="#" class="btn btn-primary">Faça uma doação</a>
+            <a href="#" class="btn btn-secondary">Entrar</a>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Educação criativa e inovadora</h1>
-            <div class="search-bar">
-                <!-- Search bar content -->
+        <div class="carousel">
+            <!-- Imagens do carrossel -->
+            <div class="carousel-item active" style="background-image: url('images/arte.jpg');"></div>
+            <div class="carousel-item" style="background-image: url('images/arte2.jpg');"></div>
+
+            <!-- Conteúdo sobreposto -->
+            <div class="carousel-content">
+                <h1>Educação criativa e inovadora</h1>
+                <!-- Botões de navegação opcionais -->
+                <div class="carousel-nav">
+                    <button class="carousel-dot active" data-index="0"></button>
+                    <button class="carousel-dot" data-index="1"></button>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="sobre" class="about">
+    <section id="sobre" class="sobre-section">
         <div class="container">
-            <div class="about-header">
-                <h2>Sobre Nós</h2>
+            <!-- Barra de navegação já existe no header -->
+
+            <!-- Título -->
+            <div class="sobre-titulo">
+                <h2>Sobre</h2>
             </div>
 
-            <div class="about-content">
-                <div class="about-text">
-                    <p>O Instituto Criativo é uma ONG que nasceu para transformar a vida das pessoas por meio da
-                        educação criativa e inovadora, empoderando-as de conhecimento de qualidade e diferenciado que
-                        são aplicados nos estudos, negócios e na própria vida contribuindo com a evolução da sociedade.
+            <!-- Descrição -->
+            <div class="sobre-descricao">
+                <p>O Instituto Criativo é uma ONG que nasceu para transformar a vida das pessoas por meio da educação
+                    criativa e inovadora, empoderando-as de conhecimento de qualidade e diferenciado que são aplicados
+                    nos estudos, negócios e na própria vida contribuindo com a evolução da sociedade.</p>
+            </div>
+
+
+            <!-- Cards em linha -->
+            <div class="sobre-cards">
+                <!-- Missão -->
+                <div class="sobre-card">
+                    <h3><i class="fas fa-bullseye"></i> Missão</h3>
+                    <p>Desenvolver e compartilhar projetos de educação criativa e inovadora que transformam a sociedade.
                     </p>
                 </div>
 
-                <div class="mission-vision-values">
-                    <div class="mission-vision">
-                        <div class="mission">
-                            <h3>Missão</h3>
-                            <p>Desenvolver e compartilhar projetos de educação criativa e inovadora que transformam a
-                                sociedade.</p>
-                        </div>
+                <!-- Visão -->
+                <div class="sobre-card">
+                    <h3><i class="fas fa-eye"></i> Visão</h3>
+                    <p>Ser referência na educação, empreendedorismo e eventos criativos por meio do aprendizado
+                        inovador.</p>
+                </div>
 
-                        <div class="vision">
-                            <h3>Visão</h3>
-                            <p>Ser referência na educação, empreendedorismo e eventos criativos por meio do aprendizado
-                                inovador.</p>
-                        </div>
-                    </div>
-
-                    <div class="values">
-                        <h3>Valores</h3>
-                        <div class="values-content">
-                            <ul>
-                                <li>Sustentabilidade</li>
-                                <li>Qualidade efetiva</li>
-                                <li>Criatividade e inovação</li>
-                            </ul>
-                            <ul>
-                                <li>Ética, respeito e honestidade</li>
-                                <li>Colaboração, comprometimento e união</li>
-                                <li>Conhecimento e aprendizagem qualitativa</li>
-                            </ul>
-                        </div>
-                    </div>
+                <!-- Valores -->
+                <div class="sobre-card">
+                    <h3><i class="fas fa-heart"></i> Valores</h3>
+                    <ul>
+                        <li>Sustentabilidade</li>
+                        <li>Ética, respeito e honestidade</li>
+                        <li>Qualidade efetiva</li>
+                        <li>Colaboração, comprometimento e união</li>
+                        <li>Criatividade e Inovação</li>
+                        <li>Conhecimento e aprendizagem qualitativa</li>
+                    </ul>
                 </div>
             </div>
+            <br>
         </div>
     </section>
-
-    <!-- Segments Section -->
-    <section id="segmentos" class="segments">
+    <section id="segmentos "class="segmentos">
         <div class="container">
-            <div class="segments-header">
-                <h2>Conheça nossos segmentos</h2>
+          <h2 class="segmentos-titulo">Nossos Segmentos</h2>
+          
+          <div class="segmentos-grid">
+            <!-- Educando -->
+            <div class="segmento-card educando">
+              <div class="segmento-header">
+                <h3>Aprendizado</h3>
+                <p class="segmento-tags">5 a 21 anos</p>
+              </div>
+              <div class="segmento-content">
+                <p>Projeto de incentivo ao raciocínio lógico de crianças para desenvolver seu pensamento crítico,
+                    empreendedorismo, matemática e computação.</p>
+                <a href="#" class="segmento-btn">Conheça</a>
+              </div>
             </div>
-
-            <div class="segments-grid">
-                <div class="segment-card">
-                    <img src="assets/icon-books.png" alt="Aprendizado" class="segment-icon">
-                    <h3>Aprendizado</h3>
-                    <p>5 a 21 anos</p>
-                    <p>Projeto de incentivo ao raciocínio lógico de crianças para desenvolver seu pensamento crítico,
-                        empreendedorismo, matemática e computação.</p>
-                </div>
-
-                <div class="segment-card">
-                    <h3>Primeiro Emprego</h3>
-                    <p>16 a 20 anos</p>
-                    <p>Jovens em busca do primeiro emprego, para fornecer competências e habilidades, desenvolvimento
-                        pessoal e conhecimentos necessários para ingressar no mercado de trabalho.</p>
-                    <img src="assets/icon-briefcase.png" alt="Primeiro Emprego" class="segment-icon">
-                </div>
-
-                <div class="segment-card">
-                    <img src="assets/icon-rocket.png" alt="Recolocação" class="segment-icon">
-                    <h3>Recolocação</h3>
-                    <p>21 a 60 anos</p>
-                    <p>Busca de novos caminhos no mercado, através da educação e capacitação.</p>
-                </div>
-
-                <div class="segment-card">
-                    <h3>Bem-Estar</h3>
-                    <p>+50 anos</p>
-                    <p>Promovendo assistência para desenvolvimento social, por meio de atividades de conversação,
-                        terapias, doação de alimentos e palestras de reeducação da mente.</p>
-                    <img src="assets/icon-heart.png" alt="Bem-Estar" class="segment-icon">
-                </div>
+            
+            <!-- Educador -->
+            <div class="segmento-card educador">
+              <div class="segmento-header">
+                <h3>Primeiro Emprego</h3>
+                <p class="segmento-tags">16 a 20 anos</p>
+              </div>
+              <div class="segmento-content">
+                <p>Jovens em busca do primeiro emprego, para fornecer competências e habilidades, desenvolvimento
+                    pessoal e conhecimentos necessários para ingressar no mercado de trabalho.</p>
+                <a href="#" class="segmento-btn">Conheça</a>
+              </div>
             </div>
+            
+            <!-- Empreendedor -->
+            <div class="segmento-card empreendedor">
+              <div class="segmento-header">
+                <h3>Recolocação</h3>
+                <p class="segmento-tags">21 a 60 anos</p>
+              </div>
+              <div class="segmento-content">
+                <p>Busca de novos caminhos no mercado, através da educação e capacitação.</p>
+                <a href="#" class="segmento-btn">Conheça</a>
+              </div>
+            </div>
+            
+            <!-- Hipnose -->
+            <div class="segmento-card hipnose">
+              <div class="segmento-header">
+                <h3>Bem-Estar</h3>
+                <p class="segmento-tags">+50 anos</p>
+              </div>
+              <div class="segmento-content">
+                <p>Promovendo assistência para desenvolvimento social, por meio de atividades de conversação,
+                    terapias, doação de alimentos e palestras de reeducação da mente.</p>
+                <a href="#" class="segmento-btn">Conheça</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="segmentos-cta">
+            <a href="#" class="cta-btn primary">Quero ser voluntário</a>
+            <a href="#" class="cta-btn secondary">Quero apoiar</a>
+          </div>
         </div>
-    </section>
-
+      </section>
     <!-- Impact Section -->
     <section id="impacto" class="impact">
         <div class="container">
@@ -167,22 +199,22 @@
             </div>
 
             <div class="impact-grid">
-                <div class="impact-card">
+                <div class="impact-card 1">
                     <div class="impact-number">100+</div>
                     <p>Projetos criativos</p>
                 </div>
 
-                <div class="impact-card">
+                <div class="impact-card 2">
                     <div class="impact-number">20.000+</div>
                     <p>Estudantes impactados</p>
                 </div>
 
-                <div class="impact-card">
+                <div class="impact-card 3">
                     <div class="impact-number">30.000+</div>
                     <p>Pessoas alcançadas</p>
                 </div>
 
-                <div class="impact-card">
+                <div class="impact-card 4">
                     <div class="impact-number">2.500+</div>
                     <p>Educadores e Pais desenvolvidos</p>
                 </div>
@@ -226,25 +258,6 @@
                     </div>
                 </div>
 
-                <div class="login-form">
-                    <h3>Faça login ou cadastre-se no nosso portal</h3>
-
-                    <form>
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" class="form-control" placeholder="Seu e-mail">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password">Senha</label>
-                            <input type="password" id="password" class="form-control" placeholder="Sua senha">
-                        </div>
-
-                        <a href="#">Cadastre-se</a>
-
-                        <button type="submit" class="submit-btn">Entrar</button>
-                    </form>
-                </div>
             </div>
         </div>
     </section>
@@ -323,15 +336,6 @@
     <!-- Brands Section -->
     <section id="marcas" class="brands">
         <div class="container">
-            <div class="brands-header">
-                <h2>Ajude o instituto criativo a transformar a sociedade</h2>
-            </div>
-
-            <div class="cta-buttons">
-                <div class="cta-button">Quero ser Criativo</div>
-                <div class="cta-button">Faça uma Doação</div>
-            </div>
-            <br>
 
             <div class="brands-content">
                 <h2>Estamos conectados com grandes marcas</h2>
@@ -405,7 +409,8 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <img src="assets/logo.png" alt="Instituto Criativo" class="logo" style="margin-bottom: 20px;">
+            <img src="https://www.institutocriativo.com.br/images/Logo.svg" alt="Instituto Criativo" class="logo"
+                style="margin-bottom: 20px;">
             <div class="footer-text">
                 <p>Transformando vidas através da educação criativa e inovadora</p>
             </div>
