@@ -45,7 +45,7 @@ Workshop de Design - 15/04/2025 - Online - 120 participantes
 ```
 
 ## 🚀 Como Executar o Projeto
-1. [Clique aqui para acessar a pasta do codigo](https://github.com/2025-1-NADS2/Projeto6/blob/main/src/Back-End/Entrega%201/Algoritmos%20e%20Estrutura%20de%20Dados/ListaOrdenada.cs)
+1. [Clique aqui para acessar a pasta do codigo](https://github.com/2025-1-NADS2/Projeto6/tree/main/src/Back-End/Entrega%201/Algoritimo%20e%20Estrutura%20de%20Dados)
 2. Abra o projeto em um ambiente C# (.NET).
 3. Compile e execute `ListaOrdenada.cs`.
 4. Siga as instruções do menu interativo para testar as funcionalidades.

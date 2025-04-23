@@ -58,8 +58,8 @@ Este sistema reforça diversos conceitos de lógica de programação e estrutura
 - Estrutura de menus interativos no terminal.
 - Simulação de CRUD (Create, Read, Update, Delete) textual.
 
-## 👨‍🏫 Disciplina
+## Link do documento abaixo:
+*Todo o arquivo esta organizado nesta pasta.*
 
-**Algoritmos e Estrutura de Dados**  
-Curso: Análise e Desenvolvimento de Sistemas  
-Projeto desenvolvido em linguagem C# (.NET Console App)
+**[Clique aqui para acessar a pasta do projeto.](https://github.com/2025-1-NADS2/Projeto6/tree/main/src/Back-End/Entrega%202/Algoritimo%20e%20Estrutura%20de%20Dados)**  
+

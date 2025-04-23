@@ -39,5 +39,5 @@ Este sistema foi desenvolvido para gerenciar eventos e projetos dentro de uma or
 
 ## Código
 
-O código-fonte completo pode ser encontrado no arquivo [main](https://github.com/2025-1-NADS2/Projeto6/blob/main/src/Back-End/main.cs)
+O código-fonte completo pode ser encontrado no arquivo [main](https://github.com/2025-1-NADS2/Projeto6/tree/main/src/Back-End/Entrega%201/Programa%C3%A7%C3%A3o%20Orientada%20a%20Objetos)
 
