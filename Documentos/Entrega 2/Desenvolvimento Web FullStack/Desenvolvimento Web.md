@@ -64,7 +64,8 @@ A entrega contempla toda a **estrutura visual e de navegação** do site, com la
 Todo o desenvolvimento buscou respeitar princípios de **usabilidade, acessibilidade e identidade visual**, aproximando o projeto do público-alvo da instituição.
 
 ---
+## Link dos documentos abaixo:
+*Todos os arquivos e materiais complementares estão organizados nessas pastas.*
 
 **[Clique aqui para acessar a pasta com os documentos do Back-end do projeto.](https://github.com/2025-1-NADS2/Projeto6/tree/main/src/Back-End/Entrega%202/Desenvolvimento%20Web)**  
 **[Clique aqui para acessar a pasta com os documentos do Front-end do projeto.](https://github.com/2025-1-NADS2/Projeto6/tree/main/src/Front-End/Entrega%202/Desenvolvimento%20Web)**  
-*Todos os arquivos e materiais complementares estão organizados nessas pastas.*
