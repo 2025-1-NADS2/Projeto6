@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Criativo - Educação Inovadora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo-link">
+                <img src="https://www.institutocriativo.com.br/images/Logo.svg" alt="Instituto Criativo" class="logo">
+            </a>
+            <!-- Navegação Desktop -->
+            <nav class="desktop-nav">
+                <ul class="main-nav">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#segmentos">Segmento</a></li>
+                    <li><a href="#impacto">Impacto</a></li>
+                    <li><a href="#cursos">Cursos/Eventos</a></li>
+                    <li><a href="#equipe">Colaboradores</a></li>
+                    <li><a href="#marcas">Marcas</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#" class="btn btn-primary">Faça uma doação</a>
+                    <a href="#" class="btn btn-secondary">Entrar</a>
+                </div>
+            </nav>
+
+            <!-- Menu Hambúrguer -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+    </header>
+    <!-- Navegação Mobile -->
+    <nav class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#segmentos">Segmento</a></li>
+            <li><a href="#impacto">Impacto</a></li>
+            <li><a href="#cursos">Cursos/Eventos</a></li>
+            <li><a href="#equipe">Colaboradores</a></li>
+            <li><a href="#marcas">Marcas</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <a href="#" class="btn btn-primary">Faça uma doação</a>
+            <a href="#" class="btn btn-secondary">Entrar</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="carousel">
+            <!-- Imagens do carrossel -->
+            <div class="carousel-item active" style="background-image: url('images/arte.jpg');"></div>
+            <div class="carousel-item" style="background-image: url('images/arte2.jpg');"></div>
+
+            <!-- Conteúdo sobreposto -->
+            <div class="carousel-content">
+                <h1>Educação criativa e inovadora</h1>
+                <!-- Botões de navegação opcionais -->
+                <div class="carousel-nav">
+                    <button class="carousel-dot active" data-index="0"></button>
+                    <button class="carousel-dot" data-index="1"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="sobre-section">
+        <div class="container">
+            <!-- Barra de navegação já existe no header -->
+
+            <!-- Título -->
+            <div class="sobre-titulo">
+                <h2>Sobre</h2>
+            </div>
+
+            <!-- Descrição -->
+            <div class="sobre-descricao">
+                <p>O Instituto Criativo é uma ONG que nasceu para transformar a vida das pessoas por meio da educação
+                    criativa e inovadora, empoderando-as de conhecimento de qualidade e diferenciado que são aplicados
+                    nos estudos, negócios e na própria vida contribuindo com a evolução da sociedade.</p>
+            </div>
+
+
+            <!-- Cards em linha -->
+            <div class="sobre-cards">
+                <!-- Missão -->
+                <div class="sobre-card">
+                    <h3><i class="fas fa-bullseye"></i> Missão</h3>
+                    <p>Desenvolver e compartilhar projetos de educação criativa e inovadora que transformam a sociedade.
+                    </p>
+                </div>
+
+                <!-- Visão -->
+                <div class="sobre-card">
+                    <h3><i class="fas fa-eye"></i> Visão</h3>
+                    <p>Ser referência na educação, empreendedorismo e eventos criativos por meio do aprendizado
+                        inovador.</p>
+                </div>
+
+                <!-- Valores -->
+                <div class="sobre-card">
+                    <h3><i class="fas fa-heart"></i> Valores</h3>
+                    <ul>
+                        <li>Sustentabilidade</li>
+                        <li>Ética, respeito e honestidade</li>
+                        <li>Qualidade efetiva</li>
+                        <li>Colaboração, comprometimento e união</li>
+                        <li>Criatividade e Inovação</li>
+                        <li>Conhecimento e aprendizagem qualitativa</li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+        </div>
+    </section>
+    <section id="segmentos "class="segmentos">
+        <div class="container">
+          <h2 class="segmentos-titulo">Nossos Segmentos</h2>
+          
+          <div class="segmentos-grid">
+            <!-- Educando -->
+            <div class="segmento-card educando">
+              <div class="segmento-header">
+                <h3>Aprendizado</h3>
+                <p class="segmento-tags">5 a 21 anos</p>
+              </div>
+              <div class="segmento-content">
+                <p>Projeto de incentivo ao raciocínio lógico de crianças para desenvolver seu pensamento crítico,
+                    empreendedorismo, matemática e computação.</p>
+                <a href="#" class="segmento-btn">Conheça</a>
+              </div>
+            </div>
+            
+            <!-- Educador -->
+            <div class="segmento-card educador">
+              <div class="segmento-header">
+                <h3>Primeiro Emprego</h3>
+                <p class="segmento-tags">16 a 20 anos</p>
+              </div>
+              <div class="segmento-content">
+                <p>Jovens em busca do primeiro emprego, para fornecer competências e habilidades, desenvolvimento
+                    pessoal e conhecimentos necessários para ingressar no mercado de trabalho.</p>
+                <a href="#" class="segmento-btn">Conheça</a>
+              </div>
+            </div>
+            
+            <!-- Empreendedor -->
+            <div class="segmento-card empreendedor">
+              <div class="segmento-header">
+                <h3>Recolocação</h3>
+                <p class="segmento-tags">21 a 60 anos</p>
+              </div>
+              <div class="segmento-content">
+                <p>Busca de novos caminhos no mercado, através da educação e capacitação.</p>
+                <a href="#" class="segmento-btn">Conheça</a>
+              </div>
+            </div>
+            
+            <!-- Hipnose -->
+            <div class="segmento-card hipnose">
+              <div class="segmento-header">
+                <h3>Bem-Estar</h3>
+                <p class="segmento-tags">+50 anos</p>
+              </div>
+              <div class="segmento-content">
+                <p>Promovendo assistência para desenvolvimento social, por meio de atividades de conversação,
+                    terapias, doação de alimentos e palestras de reeducação da mente.</p>
+                <a href="#" class="segmento-btn">Conheça</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="segmentos-cta">
+            <a href="#" class="cta-btn primary">Quero ser voluntário</a>
+            <a href="#" class="cta-btn secondary">Quero apoiar</a>
+          </div>
+        </div>
+      </section>
+    <!-- Impact Section -->
+    <section id="impacto" class="impact">
+        <div class="container">
+            <div class="impact-header">
+                <h2>A Criatividade Muda Pessoas</h2>
+            </div>
+
+            <div class="impact-grid">
+                <div class="impact-card 1">
+                    <div class="impact-number">100+</div>
+                    <p>Projetos criativos</p>
+                </div>
+
+                <div class="impact-card 2">
+                    <div class="impact-number">20.000+</div>
+                    <p>Estudantes impactados</p>
+                </div>
+
+                <div class="impact-card 3">
+                    <div class="impact-number">30.000+</div>
+                    <p>Pessoas alcançadas</p>
+                </div>
+
+                <div class="impact-card 4">
+                    <div class="impact-number">2.500+</div>
+                    <p>Educadores e Pais desenvolvidos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="cursos" class="courses">
+        <div class="container">
+            <div class="course-banner">
+                <h2>Soluções de IA no Git Hub</h2>
+            </div>
+
+            <div class="course-content">
+                <div class="benefits">
+                    <div class="benefits-header">
+                        <h3>Benefícios que você vai querer</h3>
+                    </div>
+
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <img src="assets/icon-free.png" alt="Participe de Graça" class="benefit-icon">
+                            <h4>Participe de Graça</h4>
+                            <p>Você não paga nada para fazer os cursos. É só se matricular e começar a estudar de
+                                qualquer lugar que tenha conexão com a Internet.</p>
+                        </div>
+
+                        <div class="benefit-card">
+                            <img src="assets/icon-resume.png" alt="Turbine seu Currículo" class="benefit-icon">
+                            <h4>Turbine seu Currículo</h4>
+                            <p>São varias oportunidades para você poder enriquecer seu currículo e aumentar suas chances
+                                de ingresso no mercado de trabalho.</p>
+                        </div>
+
+                        <div class="benefit-card">
+                            <img src="assets/icon-certificate.png" alt="Conquiste seu Certificado" class="benefit-icon">
+                            <h4>Conquiste seu Certificado</h4>
+                            <p>Ao ser aprovado nos cursos e nos eventos, você mesmo imprime o seu certificado!</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="equipe" class="team">
+        <div class="container">
+            <div class="team-header">
+                <h2>Parceiros e Voluntários</h2>
+            </div>
+
+            <p class="text-center">Quem nos ajuda nessa incrível jornada:</p>
+
+            <div class="team-leaders">
+                <div class="leader-card">
+                    <img src="assets/lucy-mari.jpg" alt="Lucy Mari" class="leader-photo">
+                    <div class="leader-info">
+                        <h3>Lucy Mari</h3>
+                        <p class="leader-position">Presidente e fundadora</p>
+                        <p>Empresária, educadora, psicoterapeuta, formada em matemática, mestre em ciência da
+                            computação, MBA em educação e doutora em engenharia de computação pela USP</p>
+                    </div>
+                </div>
+
+                <div class="leader-card">
+                    <img src="assets/rodrigo-assirati.jpg" alt="Rodrigo Assirati" class="leader-photo">
+                    <div class="leader-info">
+                        <h3>Rodrigo Assirati</h3>
+                        <p class="leader-position">Vice-presidente</p>
+                        <p>Educador e empreendedor, especialista de em educação pela Microsoft e consultor de tecnologia
+                            em várias empresas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-members">
+                <div class="member-card">
+                    <img src="assets/deyse-santana.jpg" alt="Deyse Santana" class="member-photo">
+                    <h4>Deyse Santana</h4>
+                    <p>Analista Financeira</p>
+                </div>
+
+                <div class="member-card">
+                    <img src="assets/joao-querlon.jpg" alt="João Querlon" class="member-photo">
+                    <h4>João Querlon</h4>
+                    <p>Conselheiro fiscal</p>
+                </div>
+
+                <div class="member-card">
+                    <img src="assets/felipe-almeida.jpg" alt="Felipe Almeida" class="member-photo">
+                    <h4>Felipe Almeida</h4>
+                    <p>Designer</p>
+                </div>
+
+                <div class="member-card">
+                    <img src="assets/joaquim-roberto.jpg" alt="Joaquim Roberto" class="member-photo">
+                    <h4>Joaquim Roberto</h4>
+                    <p>Conselheiro</p>
+                </div>
+
+                <div class="member-card">
+                    <img src="assets/carlos-albertini.jpg" alt="Carlos E. Albertini" class="member-photo">
+                    <h4>Carlos E. Albertini</h4>
+                    <p>Psicoterapeuta</p>
+                </div>
+
+                <div class="member-card">
+                    <img src="assets/marcos-brito.jpg" alt="Marcos Brito" class="member-photo">
+                    <h4>Marcos Brito</h4>
+                    <p>Gestor de conteúdo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="marcas" class="brands">
+        <div class="container">
+
+            <div class="brands-content">
+                <h2>Estamos conectados com grandes marcas</h2>
+            </div>
+
+            <div class="brands-grid">
+                <div class="brand-card">
+                    <img src="assets/google-logo.png" alt="Google" class="brand-logo">
+                </div>
+
+                <div class="brand-card">
+                    <img src="assets/microsoft-logo.png" alt="Microsoft" class="brand-logo">
+                </div>
+
+                <div class="brand-card">
+                    <img src="assets/ibm-logo.png" alt="IBM" class="brand-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="contact-header">
+                <h2>Entre em Contato</h2>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-map">
+                        <!-- Mapa será inserido aqui -->
+                    </div>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <img src="assets/icon-phone.png" alt="Telefone" class="contact-icon">
+                            <p>(11) 99999-9999</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <img src="assets/icon-email.png" alt="E-mail" class="contact-icon">
+                            <p>contato@institutocriativo.org</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <img src="assets/icon-location.png" alt="Endereço" class="contact-icon">
+                            <p>Rua Criativa, 123 - Inovação, São Paulo - SP</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <img src="assets/icon-clock.png" alt="Horário" class="contact-icon">
+                            <p>Segunda a Sexta: 9h às 18h</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Envie sua mensagem</h3>
+                    <form>
+                        <input type="text" class="form-input" placeholder="Seu nome">
+                        <input type="email" class="form-input" placeholder="Seu e-mail">
+                        <input type="text" class="form-input" placeholder="Assunto">
+                        <textarea class="form-input form-textarea" placeholder="Sua mensagem"></textarea>
+                        <button type="submit" class="submit-button">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <img src="https://www.institutocriativo.com.br/images/Logo.svg" alt="Instituto Criativo" class="logo"
+                style="margin-bottom: 20px;">
+            <div class="footer-text">
+                <p>Transformando vidas através da educação criativa e inovadora</p>
+            </div>
+
+            <div class="social-icons" style="margin: 30px 0; display: flex; justify-content: center; gap: 20px;">
+                <a href="#"><i class="fab fa-facebook-f" style="font-size: 24px;"></i></a>
+                <a href="#"><i class="fab fa-instagram" style="font-size: 24px;"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in" style="font-size: 24px;"></i></a>
+                <a href="#"><i class="fab fa-youtube" style="font-size: 24px;"></i></a>
+            </div>
+
+            <p style="margin-bottom: 20px;">© 2023 Instituto Criativo. Todos os direitos reservados.</p>
+
+            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
+                <a href="#" style="font-weight: 600;">Política de Privacidade</a>
+                <a href="#" style="font-weight: 600;">Termos de Uso</a>
+                <a href="#" style="font-weight: 600;">Trabalhe Conosco</a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
