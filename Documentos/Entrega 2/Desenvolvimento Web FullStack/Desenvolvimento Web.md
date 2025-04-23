@@ -65,6 +65,6 @@ Todo o desenvolvimento buscou respeitar princípios de **usabilidade, acessibili
 
 ---
 
-**[Clique aqui para acessar a pasta com os documentos do Back-end do projeto.](../../../src/Back-end/entrega%202/desenvolvimento%20web/)**  
-**[Clique aqui para acessar a pasta com os documentos do Front-end do projeto.](../../../src/Front-end/entrega%202/desenvolvimento%20web/)**  
+**[Clique aqui para acessar a pasta com os documentos do Back-end do projeto.](https://github.com/2025-1-NADS2/Projeto6/tree/main/src/Back-End/Entrega%202/Desenvolvimento%20Web)**  
+**[Clique aqui para acessar a pasta com os documentos do Front-end do projeto.]((https://github.com/2025-1-NADS2/Projeto6/tree/main/src/Front-End/Entrega%202/Desenvolvimento%20Web))**  
 *Todos os arquivos e materiais complementares estão organizados nessas pastas.*
