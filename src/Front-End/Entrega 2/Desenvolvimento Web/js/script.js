@@ -1,104 +1,152 @@
-// menu de hamburguer
-const menuToggle = document.getElementById('menuToggle');
-const mobileNav = document.getElementById('mobileNav');
-
-menuToggle.addEventListener('click', () => {
-    mobileNav.classList.toggle('active');
-    menuToggle.innerHTML = mobileNav.classList.contains('active')
-        ? '<i class="fas fa-times"></i>'
-        : '<i class="fas fa-bars"></i>';
-});
-
-document.querySelectorAll('.mobile-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileNav.classList.remove('active');
-        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-    });
-});
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Sticky header
-window.addEventListener('scroll', function () {
-    const header = document.querySelector('header');
-    header.classList.toggle('sticky', window.scrollY > 0);
-});
-
-// carrossel
 document.addEventListener('DOMContentLoaded', function() {
-    const items = document.querySelectorAll('.carousel-item');
-    const dots = document.querySelectorAll('.carousel-dot');
-    let currentIndex = 0;
-    const intervalTime = 5000; // 5 segundos
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
     
-    // Função para mudar slide
-    function nextSlide() {
-        items[currentIndex].classList.remove('active');
-        dots[currentIndex].classList.remove('active');
-        
-        currentIndex = (currentIndex + 1) % items.length;
-        
-        items[currentIndex].classList.add('active');
-        dots[currentIndex].classList.add('active');
-    }
-    
-    // Iniciar autoplay
-    let carouselInterval = setInterval(nextSlide, intervalTime);
-    
-    // Pausar ao passar o mouse
-    const carousel = document.querySelector('.carousel');
-    carousel.addEventListener('mouseenter', () => {
-        clearInterval(carouselInterval);
+    menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mobileNav.classList.toggle('active');
     });
     
-    // Retomar autoplay
-    carousel.addEventListener('mouseleave', () => {
-        carouselInterval = setInterval(nextSlide, intervalTime);
-    });
-    
-    // Navegação pelos dots
-    dots.forEach(dot => {
-        dot.addEventListener('click', function() {
-            const dotIndex = parseInt(this.getAttribute('data-index'));
-            
-            items[currentIndex].classList.remove('active');
-            dots[currentIndex].classList.remove('active');
-            
-            currentIndex = dotIndex;
-            
-            items[currentIndex].classList.add('active');
-            dots[currentIndex].classList.add('active');
-            
-            // Reiniciar intervalo
-            clearInterval(carouselInterval);
-            carouselInterval = setInterval(nextSlide, intervalTime);
+    // Close mobile menu when clicking on a link
+    const mobileLinks = document.querySelectorAll('.mobile-links a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
         });
     });
-});
-
-// Verificar se é mobile
-function isMobile() {
-    return window.innerWidth <= 768;
-}
-
-// Ajustar altura do carrossel em mobile
-function adjustCarouselHeight() {
-    const hero = document.querySelector('.hero');
-    if (isMobile()) {
-        hero.style.height = `${window.innerHeight * 0.7}px`;
-    } else {
-        hero.style.height = '';
+    
+    // Hero Slider
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentSlide = index;
     }
-}
-
-// Inicializar
-window.addEventListener('load', adjustCarouselHeight);
-window.addEventListener('resize', adjustCarouselHeight);
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }
+    
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+    }
+    
+    // Auto slide change every 5 seconds
+    let slideInterval = setInterval(nextSlide, 5000);
+    
+    // Pause on hover
+    const heroSlider = document.querySelector('.hero-slider');
+    heroSlider.addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+    });
+    
+    heroSlider.addEventListener('mouseleave', () => {
+        slideInterval = setInterval(nextSlide, 5000);
+    });
+    
+    // Manual controls
+    nextBtn.addEventListener('click', () => {
+        clearInterval(slideInterval);
+        nextSlide();
+        slideInterval = setInterval(nextSlide, 5000);
+    });
+    
+    prevBtn.addEventListener('click', () => {
+        clearInterval(slideInterval);
+        prevSlide();
+        slideInterval = setInterval(nextSlide, 5000);
+    });
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            showSlide(index);
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+    });
+    
+    // Courses Tabs
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            // Here you would typically load different content based on the tab
+        });
+    });
+    
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Animation on scroll
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.value-card, .segment-card, .impact-card, .course-card, .team-card');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (elementPosition < screenPosition) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+    
+    // Set initial state for animated elements
+    const animatedElements = document.querySelectorAll('.value-card, .segment-card, .impact-card, .course-card, .team-card');
+    animatedElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
+    
+    window.addEventListener('scroll', animateOnScroll);
+    // Trigger once on page load
+    animateOnScroll();
+});
