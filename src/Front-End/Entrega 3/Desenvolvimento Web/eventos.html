@@ -143,61 +143,105 @@
             </div>
             
             <div class="modal-body">
-                <form id="eventForm">
-                    <input type="hidden" id="eventId">
-                    
-                    <div class="form-group">
-                        <label for="eventTitle" class="form-label">Título do Evento</label>
-                        <input type="text" id="eventTitle" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="eventDescription" class="form-label">Descrição</label>
-                        <textarea id="eventDescription" class="form-control" rows="4" required></textarea>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="form-group">
-                            <label for="eventType" class="form-label">Tipo de Evento</label>
-                            <select id="eventType" class="form-control" required>
-                                <option value="">Selecione...</option>
-                                <option value="palestra">Palestra</option>
-                                <option value="workshop">Workshop</option>
-                                <option value="curso">Curso</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="eventCapacity" class="form-label">Vagas</label>
-                            <input type="number" id="eventCapacity" class="form-control" min="1" required>
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="form-group">
-                            <label for="eventDate" class="form-label">Data</label>
-                            <input type="date" id="eventDate" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="eventTime" class="form-label">Horário</label>
-                            <input type="time" id="eventTime" class="form-control" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="eventImage" class="form-label">Imagem (URL)</label>
-                        <input type="url" id="eventImage" class="form-control" placeholder="https://...">
-                    </div>
-                    
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Salvar Evento</button>
-                        <button type="button" class="btn btn-outline modal-close">Cancelar</button>
-                    </div>
-                </form>
+  <form id="eventForm">
+    <!-- Tipo de Cadastro -->
+    <div class="form-group">
+        <label for="cadastroTipo" class="form-label">Tipo de Cadastro</label>
+        <select id="cadastroTipo" class="form-control" required>
+            <option value="evento">Evento</option>
+            <option value="curso">Curso</option>
+        </select>
+    </div>
+
+    <!-- FORMULÁRIO DE EVENTO -->
+    <div id="formEvento">
+        <div class="form-group">
+            <label for="eventTitle" class="form-label">Título do Evento</label>
+            <input type="text" id="eventTitle" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="eventDescription" class="form-label">Descrição</label>
+            <textarea id="eventDescription" class="form-control" rows="4" required></textarea>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <div class="form-group">
+                <label for="eventDate" class="form-label">Data</label>
+                <input type="date" id="eventDate" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="eventLocal" class="form-label">Local</label>
+                <input type="text" id="eventLocal" class="form-control" required>
             </div>
         </div>
+
+        <div class="form-group">
+            <label for="eventImage" class="form-label">Imagem</label>
+            <input type="file" id="eventImage" class="form-control" accept="image/*" required>
+        </div>
+
+        <div id="previewContainer" class="form-group" style="margin-top: 1rem;">
+            <label class="form-label">Pré-visualização:</label>
+            <img id="previewImage" style="max-width: 100%; border-radius: 8px; display: none;" />
+        </div>
     </div>
+
+    <!-- FORMULÁRIO DE CURSO -->
+    <div id="formCurso" style="display: none;">
+        <div class="form-group">
+            <label for="cursoTitulo" class="form-label">Título do Curso</label>
+            <input type="text" id="cursoTitulo" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="cursoDescricao" class="form-label">Descrição</label>
+            <textarea id="cursoDescricao" class="form-control" rows="4"></textarea>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <div class="form-group">
+                <label for="cursoHoras" class="form-label">Carga Horária</label>
+                <input type="text" id="cursoHoras" class="form-control" placeholder="Ex: 30 horas">
+            </div>
+
+            <div class="form-group">
+                <label for="cursoNivel" class="form-label">Nível</label>
+                <select id="cursoNivel" class="form-control">
+                    <option value="iniciante">Iniciante</option>
+                    <option value="intermediario">Intermediário</option>
+                    <option value="avancado">Avançado</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="cursoLink" class="form-label">Link do Curso</label>
+            <input type="url" id="cursoLink" class="form-control" placeholder="https://...">
+        </div>
+
+        <div class="form-group">
+            <label for="cursoImagem" class="form-label">Imagem</label>
+            <input type="file" id="cursoImagem" class="form-control" accept="image/*">
+        </div>
+
+        <div id="cursoPreview" class="form-group" style="margin-top: 1rem;">
+            <label class="form-label">Pré-visualização:</label>
+            <img id="cursoPreviewImage" style="max-width: 100%; border-radius: 8px; display: none;" />
+        </div>
+    </div>
+
+    <div class="form-actions" style="text-align: right;">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+</form>
+    </div>
+    </div>
+    </div>
+
+
+              
     
     <script src="js/eventos.js"></script>
 </body>

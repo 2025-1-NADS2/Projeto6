@@ -3,10 +3,16 @@ import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
 
-// Garante o caminho certo do .env
+dotenv.config();
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
+console.log(">>> .env carregado em db.js:", {
+  DB_NAME: process.env.DB_NAME,
+  DB_USER: process.env.DB_USER,
+  DB_PASS: process.env.DB_PASS,
+});
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
