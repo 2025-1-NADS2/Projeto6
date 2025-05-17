@@ -14,7 +14,6 @@
 
 <p align="center">
   <a href="https://www.linkedin.com/in/eduardo-araujo-33a1a2278?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">Eduardo Araujo</a> &bull;
-  <a href="https://www.site2.com" target="_blank">Fabricio Yukio</a> &bull;
   <a href="https://www.linkedin.com/in/luanroccha13?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Luan Rocha</a> &bull;
   <a href="https://www.linkedin.com/in/oficialvitormelo/" target="_blank">Vitor Melo</a>
 </p>
