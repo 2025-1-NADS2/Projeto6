@@ -435,16 +435,19 @@ textarea.form-control {
     position: fixed;
     top: 0;
     left: 0;
+    padding: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 9999;
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
+    inset: 0;
+    border: none;
 }
 
 .modal.active {
@@ -452,16 +455,25 @@ textarea.form-control {
     visibility: visible;
 }
 
-.modal-content {
-    background-color: var(--white);
-    border-radius: var(--border-radius);
-    width: 100%;
-    max-width: 600px;
-    max-height: 90vh;
-    overflow-y: auto;
-    transform: translateY(20px);
-    transition: var(--transition);
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
 }
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
 
 .modal.active .modal-content {
     transform: translateY(0);
@@ -490,6 +502,32 @@ textarea.form-control {
 
 .modal-body {
     padding: 1.5rem;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  border: none;
+  padding: 0;
+}
+
+.modal::backdrop {
+  background: none;
+}
+
+.modal-overlay {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--box-shadow);
 }
 
 /* Responsividade */
@@ -536,10 +574,11 @@ textarea.form-control {
 }
 .filter-position {
   position: fixed;
-  bottom: 40px;
-  right: 20px;
+  top: 100px;
+  right: 40px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
-  z-index: 999;
+  z-index: 1000;
 }

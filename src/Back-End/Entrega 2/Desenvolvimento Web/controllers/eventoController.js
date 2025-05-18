@@ -4,10 +4,10 @@ import { Op } from "sequelize";
 // Criar evento
 const criarEvento = async (req, res) => {
   try {
-    const { titulo, descricao, data, local } = req.body;
+    const { titulo, descricao, data, local, imagem: imagemURL } = req.body;
 
-    // Verifica imagem
-    const imagem = req.file ? req.file.filename : null;
+    // Verifica imagem enviada como arquivo OU link
+    const imagem = req.file ? req.file.filename : imagemURL;
     if (!imagem) {
       return res.status(400).json({ mensagem: "Imagem obrigatória!" });
     }
@@ -36,7 +36,6 @@ const criarEvento = async (req, res) => {
     res.status(500).json({ mensagem: "Erro ao criar evento.", erro: erro.message });
   }
 };
-
 
 // Listar eventos com filtros, ordenação e paginação
 const listarEventos = async (req, res) => {
@@ -74,8 +73,8 @@ const listarEventos = async (req, res) => {
 const editarEvento = async (req, res) => {
   try {
     const { id } = req.params;
-    const { titulo, descricao, data, local } = req.body;
-    const imagem = req.file ? req.file.filename : null;
+    const { titulo, descricao, data, local, imagem: imagemURL } = req.body;
+    const imagem = req.file ? req.file.filename : imagemURL;
 
     const evento = await Evento.findByPk(id);
     if (!evento) {

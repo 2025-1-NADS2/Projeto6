@@ -10,12 +10,13 @@ const __dirname = path.dirname(__filename);
 const cursoController = {
   criarCurso: async (req, res) => {
     try {
-      const { titulo, descricao, cargaHoraria, nivel, link } = req.body;
-      const imagem = req.file ? req.file.filename : null;
+      const { titulo, descricao, cargaHoraria, nivel, link, imagem: imagemURL } = req.body;
+      const imagem = req.file ? req.file.filename : imagemURL;
 
-      if (!imagem) {
-        return res.status(400).json({ message: 'Imagem obrigatória' });
-      }
+    if (!imagem) {
+    return res.status(400).json({ message: 'Imagem obrigatória' });
+    }
+
 
       const novoCurso = await Curso.create({
         titulo,

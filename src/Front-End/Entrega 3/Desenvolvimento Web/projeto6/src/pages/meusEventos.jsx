@@ -19,7 +19,10 @@ const MeusEventos = () => {
         .get('/api/meus-eventos', {
           headers: { Authorization: `Bearer ${token}` },
         })
-        .then((res) => setMeusEventos(res.data))
+        .then((res) => {
+          const dados = Array.isArray(res.data) ? res.data : [];
+          setMeusEventos(dados);
+        })
         .catch((err) => console.error('Erro ao carregar eventos:', err));
     }
   }, [token]);
@@ -45,22 +48,26 @@ const MeusEventos = () => {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then(() => {
-          setMeusEventos(meusEventos.filter((ev) => ev.id !== eventoSelecionado.id));
+          setMeusEventos((prev) =>
+            prev.filter((ev) => ev.id !== eventoSelecionado.id)
+          );
           fecharModal();
         })
         .catch((err) => console.error('Erro ao cancelar inscrição:', err));
     }
   };
 
-  const eventosFiltrados = meusEventos.filter((evento) => {
-    const agora = new Date();
-    const dataEvento = new Date(evento.data);
-    return tab === 'upcoming' ? dataEvento >= agora : dataEvento < agora;
-  });
+  const eventosFiltrados = Array.isArray(meusEventos)
+    ? meusEventos.filter((evento) => {
+        const agora = new Date();
+        const dataEvento = new Date(evento.data);
+        return tab === 'upcoming' ? dataEvento >= agora : dataEvento < agora;
+      })
+    : [];
 
   return (
     <>
-      <Header /> {}
+      <Header />
 
       <div className="dashboard-layout">
         <aside className="sidebar">
@@ -114,24 +121,34 @@ const MeusEventos = () => {
             </div>
           </header>
 
-          <div className="card">
-            <div className="card-body">
-              <div className="grid grid-cols-1 gap-4">
-                {eventosFiltrados.length === 0 ? (
-                  <p>Sem eventos cadastrados nesta aba.</p>
-                ) : (
-                  eventosFiltrados.map((evento) => (
-                    <div className="event-card" key={evento.id}>
-                      <h4>{evento.titulo}</h4>
-                      <p>{evento.descricao}</p>
-                      <p><strong>Data:</strong> {new Date(evento.data).toLocaleDateString()}</p>
-                      <p><strong>Local:</strong> {evento.local}</p>
-                      <button className="btn btn-outline" onClick={() => abrirModal(evento)}>
-                        Cancelar Inscrição
-                      </button>
-                    </div>
-                  ))
-                )}
+          {/* Centralização se não houver eventos */}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: eventosFiltrados.length === 0 ? 'center' : 'flex-start',
+              height: eventosFiltrados.length === 0 ? '70vh' : 'auto'
+            }}
+          >
+            <div className="card" style={{ width: '100%', maxWidth: '900px' }}>
+              <div className="card-body">
+                <div className="grid grid-cols-1 gap-4">
+                  {eventosFiltrados.length === 0 ? (
+                    <p>Sem eventos cadastrados nesta aba.</p>
+                  ) : (
+                    eventosFiltrados.map((evento) => (
+                      <div className="event-card" key={evento.id}>
+                        <h4>{evento.titulo}</h4>
+                        <p>{evento.descricao}</p>
+                        <p><strong>Data:</strong> {new Date(evento.data).toLocaleDateString()}</p>
+                        <p><strong>Local:</strong> {evento.local}</p>
+                        <button className="btn btn-outline" onClick={() => abrirModal(evento)}>
+                          Cancelar Inscrição
+                        </button>
+                      </div>
+                    ))
+                  )}
+                </div>
               </div>
             </div>
           </div>

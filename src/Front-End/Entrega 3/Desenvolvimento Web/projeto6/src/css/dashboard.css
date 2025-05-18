@@ -102,6 +102,10 @@
     color: var(--light-gray);
 }
 
+.main-content {
+    padding-top: 120px;
+}
+
 .calendar-day.has-event::after {
     content: '';
     position: absolute;
@@ -253,4 +257,18 @@
     .grid-cols-2, .grid-cols-3 {
         grid-template-columns: 1fr;
     }
+}
+.btn-danger {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #c62828;
 }

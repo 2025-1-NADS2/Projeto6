@@ -14,12 +14,6 @@ const Dashboard = () => {
       navigate("/");
     }
   }, [navigate]);
-
-  const handleCriarEvento = () => {
-    const modal = document.getElementById('eventModal');
-    if (modal) modal.showModal();
-  };
-
   const editarCurso = (id) => {
     navigate(`/cursos/editar/${id}`);
   };
@@ -39,10 +33,7 @@ const Dashboard = () => {
     gap: '10px',
     alignItems: 'flex-end'
   }}>
-    <button onClick={handleCriarEvento} className="btn btn-primary">
-      + Adicionar Evento ou Curso
-    </button>
-    <button onClick={() => editarCurso(1)} className="btn btn-outline">
+   <button onClick={() => editarCurso(1)} className="btn btn-outline">
       Editar Curso Exemplo
     </button>
   </div>

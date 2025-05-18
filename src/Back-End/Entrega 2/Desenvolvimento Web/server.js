@@ -24,7 +24,7 @@ app.use(limiter);
 
 
 app.use("/auth", authRoutes);
-app.use("/eventos", eventoRoutes);
+app.use("/api/eventos", eventoRoutes);
 app.use('/api/cursos', cursoRoutes); 
 
 sequelize.sync({ alter: true }).then(() => {

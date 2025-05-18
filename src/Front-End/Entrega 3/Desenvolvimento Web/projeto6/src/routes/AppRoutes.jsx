@@ -7,10 +7,12 @@ import Estatisticas from '../pages/estatisticas';
 import MeusEventos from '../pages/meusEventos';
 import EditarCurso from '../pages/EditarCurso';
 import Login from '../pages/login';
+import Cursos from '../pages/Cursos';
 
 const AppRoutes = () => {
   return (
     <Routes>
+      <Route path="/cursos" element={<Cursos />} />
       <Route path="/" element={<Home />} />
       <Route path="/eventos" element={<Eventos />} />
       <Route path="/cadastro" element={<Cadastro />} />

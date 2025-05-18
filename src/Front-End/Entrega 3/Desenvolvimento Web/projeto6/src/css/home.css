@@ -718,6 +718,8 @@ a {
     color: var(--white);
 }
 
+
+
 .courses-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1389,3 +1391,95 @@ a {
         border-radius: 50px;
     }
 }
+.cursos-eventos-section {
+  background-color: #fff;
+  padding: 4rem 1rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1rem;
+  color: #d20048;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background-color: #d20048;
+  margin: 1rem auto 2rem;
+  border-radius: 4px;
+}
+
+.list-title {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  color: #333;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body h5 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+.tab-btn {
+  padding: 0.5rem 1.5rem;
+  margin: 0 0.5rem;
+  border: none;
+  background-color: #eee;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.tab-btn.active {
+  background-color: #d20048;
+  color: white;
+}
+
+.btn-small.disabled {
+  background-color: #ccc;
+  pointer-events: none;
+}
+
