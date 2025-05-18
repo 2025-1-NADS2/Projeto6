@@ -1,32 +1,37 @@
-import { DataTypes } from 'sequelize';
-import sequelize from '../config/db.js';
-import User from './user.js';
+import express from "express";
+import upload from "../uploadconfig.js";
+import eventoController from "../controllers/eventoController.js";
+import verifyToken, { permitirPerfil } from "../middlewares/verifyToken.js";
 
-const Evento = sequelize.define('Evento', {
-  titulo: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  descricao: {
-    type: DataTypes.TEXT,
-    allowNull: false
-  },
-  data: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  local: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  imagem: {
-    type: DataTypes.STRING,
-    allowNull: false
-  }
-});
+const router = express.Router();
 
-// Relacionamentos
-Evento.belongsTo(User);  // cria a chave estrangeira UserId
-User.hasMany(Evento);    // um usuário pode ter vários eventos
+// Criar evento – apenas para admin
+router.post(
+  "/",
+  verifyToken,
+  permitirPerfil("admin"),
+  upload.single("imagem"),
+  eventoController.criarEvento
+);
 
-export default Evento;
+// Listar eventos – público
+router.get("/", eventoController.listarEventos);
+
+// Editar evento – apenas para admin
+router.put(
+  "/:id",
+  verifyToken,
+  permitirPerfil("admin"),
+  upload.single("imagem"),
+  eventoController.editarEvento
+);
+
+// Deletar evento – apenas para admin
+router.delete(
+  "/:id",
+  verifyToken,
+  permitirPerfil("admin"),
+  eventoController.deletarEvento
+);
+
+export default router;
