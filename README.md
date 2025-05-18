@@ -57,6 +57,24 @@ O **InnovateDesk** é um painel administrativo moderno e inovador, criado para a
 ---
 
 # 🛠 Estrutura de Pasta
+-Raiz<br>
+|<br>
+|-->documentos<br>
+|-->imagens<br>
+|-->src<br>
+  &emsp;|-->Backend<br>
+  &emsp;|-->Frontend<br>
+|readme.md<br>
+
+<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
+
+Há também 4 pastas que seguem da seguinte forma:
+
+<b>documentos</b>: Toda a documentação estará nesta pasta.
+
+<b>imagens</b>: Imagens do sistema
+
+<b>src</b>: Pasta que contém o código fonte.
 
 
 ## 📊 Funcionalidades do Dashboard
