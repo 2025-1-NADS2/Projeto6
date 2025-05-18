@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-function verifyToken(req, res, next) {
+export const verifyToken = (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).json({ mensagem: "Token não enviado ou mal formatado." });
@@ -10,12 +10,18 @@ function verifyToken(req, res, next) {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.userId = decoded.id;
-    req.perfil = decoded.perfil; 
+    req.perfil = decoded.perfil;
     next();
   } catch (erro) {
     return res.status(401).json({ mensagem: "Token inválido." });
   }
-}
+};
 
-export default verifyToken;
-
+export const permitirPerfil = (...perfisPermitidos) => {
+  return (req, res, next) => {
+    if (!perfisPermitidos.includes(req.perfil)) {
+      return res.status(403).json({ mensagem: "Acesso negado. Perfil sem permissão." });
+    }
+    next();
+  };
+};

@@ -3,7 +3,7 @@ import '../css/main.css';
 import '../css/dashboard.css';
 import { isAdmin, isProfessor } from '../utils/auth';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header'; 
+import Header from '../components/Header';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -11,15 +11,13 @@ const Dashboard = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      navigate("/"); // redireciona se não estiver logado
+      navigate("/");
     }
   }, [navigate]);
 
   const handleCriarEvento = () => {
     const modal = document.getElementById('eventModal');
-    if (modal) {
-      modal.showModal();
-    }
+    if (modal) modal.showModal();
   };
 
   const editarCurso = (id) => {
@@ -28,98 +26,87 @@ const Dashboard = () => {
 
   return (
     <>
-      <Header /> {}
+      <Header />
 
-      <div className="dashboard-layout">
-        <main className="main-content">
-          <header className="header">
-            <h2>Dashboard</h2>
-            <div className="user-menu">
-              <div className="user-avatar">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" />
-              </div>
-            </div>
-          </header>
+      {(isAdmin() || isProfessor()) && (
+  <div style={{
+    position: 'absolute',
+    top: '100px',
+    right: '40px',
+    zIndex: 10,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '10px',
+    alignItems: 'flex-end'
+  }}>
+    <button onClick={handleCriarEvento} className="btn btn-primary">
+      + Adicionar Evento ou Curso
+    </button>
+    <button onClick={() => editarCurso(1)} className="btn btn-outline">
+      Editar Curso Exemplo
+    </button>
+  </div>
+)}
 
-          <div style={{ margin: "20px 0" }}>
-            {(isAdmin() || isProfessor()) && (
-              <>
-                <button onClick={handleCriarEvento} className="btn btn-primary" style={{ marginRight: '10px' }}>
-                  Adicionar Evento ou Curso
-                </button>
-                <button onClick={() => editarCurso(1)} className="btn btn-outline">
-                  Editar Curso Exemplo
-                </button>
-              </>
-            )}
-          </div>
-
-          {/* Estatísticas */}
-          <div className="stats-grid">
-            <div className="stat-card">
-              <div className="stat-value">1,248</div>
-              <div className="stat-label">Total de Inscrições</div>
-              <div className="stat-change up">
-                <i className="fas fa-arrow-up"></i>
-                <span>12% em relação ao mês passado</span>
-              </div>
-            </div>
-
-            <div className="stat-card">
-              <div className="stat-value">48</div>
-              <div className="stat-label">Eventos Ativos</div>
-              <div className="stat-change up">
-                <i className="fas fa-arrow-up"></i>
-                <span>5 novos eventos</span>
-              </div>
-            </div>
-
-            <div className="stat-card">
-              <div className="stat-value">R$ 24,560</div>
-              <div className="stat-label">Arrecadação</div>
-              <div className="stat-change down">
-                <i className="fas fa-arrow-down"></i>
-                <span>8% em relação ao mês passado</span>
-              </div>
-            </div>
-
-            <div className="stat-card">
-              <div className="stat-value">87%</div>
-              <div className="stat-label">Taxa de Satisfação</div>
-              <div className="stat-change up">
-                <i className="fas fa-arrow-up"></i>
-                <span>3% em relação ao mês passado</span>
-              </div>
+      <div className="dashboard-layout" style={{ padding: '100px 40px 40px', maxWidth: '1200px', margin: '0 auto' }}>
+        {/* Estatísticas */}
+        <div className="stats-grid" style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', marginBottom: '50px' }}>
+          <div className="stat-card">
+            <div className="stat-value">1,248</div>
+            <div className="stat-label">Total de Inscrições</div>
+            <div className="stat-change up">
+              <span>12% em relação ao mês passado</span>
             </div>
           </div>
 
-          {/* Próximos Eventos */}
-          <div className="card mb-4">
+          <div className="stat-card">
+            <div className="stat-value">48</div>
+            <div className="stat-label">Eventos Ativos</div>
+            <div className="stat-change up">
+              <span>5 novos eventos</span>
+            </div>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-value">R$ 24.560</div>
+            <div className="stat-label">Arrecadação</div>
+            <div className="stat-change down">
+              <span>8% em relação ao mês passado</span>
+            </div>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-value">87%</div>
+            <div className="stat-label">Taxa de Satisfação</div>
+            <div className="stat-change up">
+              <span>3% em relação ao mês passado</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Cards de eventos */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+          <div className="card" style={{ minHeight: '300px' }}>
             <div className="card-header">
               <h3>Próximos Eventos</h3>
             </div>
             <div className="card-body">
-              <div className="grid grid-cols-3 gap-4" id="upcomingEvents">
-                {/* eventos aqui */}
-              </div>
+              <div className="grid grid-cols-3 gap-4" id="upcomingEvents"></div>
             </div>
             <div className="card-footer text-center">
               <a href="/eventos" className="text-link">Ver todos os eventos</a>
             </div>
           </div>
 
-          {/* Minhas Inscrições */}
-          <div className="card">
+          <div className="card" style={{ minHeight: '300px' }}>
             <div className="card-header">
               <h3>Minhas Inscrições</h3>
             </div>
             <div className="card-body">
-              <div className="grid grid-cols-2 gap-4" id="myRegistrations">
-                {/* dados aqui */}
-              </div>
+              <div className="grid grid-cols-2 gap-4" id="myRegistrations"></div>
             </div>
           </div>
-        </main>
+        </div>
       </div>
     </>
   );

@@ -6,15 +6,23 @@ const criarEvento = async (req, res) => {
   try {
     const { titulo, descricao, data, local } = req.body;
 
+    // Verifica imagem
     const imagem = req.file ? req.file.filename : null;
     if (!imagem) {
       return res.status(400).json({ mensagem: "Imagem obrigatória!" });
     }
 
+    // Corrige formato da data (de "21/06/2025" para "2025-06-21")
+    let dataFormatada = data;
+    if (data.includes('/')) {
+      const [dia, mes, ano] = data.split('/');
+      dataFormatada = `${ano}-${mes}-${dia}`;
+    }
+
     const novoEvento = await Evento.create({
       titulo,
       descricao,
-      data,
+      data: dataFormatada,
       local,
       imagem,
       UserId: req.userId,
@@ -28,6 +36,7 @@ const criarEvento = async (req, res) => {
     res.status(500).json({ mensagem: "Erro ao criar evento.", erro: erro.message });
   }
 };
+
 
 // Listar eventos com filtros, ordenação e paginação
 const listarEventos = async (req, res) => {

@@ -1,7 +1,7 @@
 import express from 'express';
 import cursoController from '../controllers/cursoController.js';
 import upload from '../uploadconfig.js';
-import verifyToken, { permitirPerfil } from '../middlewares/verifyToken.js';
+import { verifyToken, permitirPerfil } from '../middlewares/verifyToken.js';
 
 const router = express.Router();
 
