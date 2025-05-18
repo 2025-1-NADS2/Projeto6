@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import '../css/dashboard.css';
 import '../css/main.css';
 import axios from 'axios';
-import { getToken, isAdmin, isProfessor, getPerfil } from '../utils/auth'; //  IMPORTS
+import { getToken, isAdmin, isProfessor, getPerfil } from '../utils/auth';
+import Header from '../components/Header'; // ✅ Import do Header
 
-    const Eventos = () => {
+const Eventos = () => {
   const [tipoCadastro, setTipoCadastro] = useState('evento');
   const [eventos, setEventos] = useState([]);
   const [preview, setPreview] = useState(null);
@@ -33,11 +34,10 @@ import { getToken, isAdmin, isProfessor, getPerfil } from '../utils/auth'; //  I
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const perfil = getPerfil(); //  Pega o perfil salvo no login
+    const perfil = getPerfil();
     const token = getToken();
     const formData = new FormData();
 
-    // Verifica permissões
     if (tipoCadastro === "evento" && perfil !== "admin") {
       alert("Apenas administradores podem cadastrar eventos.");
       return;
@@ -64,10 +64,9 @@ import { getToken, isAdmin, isProfessor, getPerfil } from '../utils/auth'; //  I
     }
 
     try {
-      const url =
-        tipoCadastro === "evento"
-          ? "http://localhost:3000/eventos"
-          : "http://localhost:3000/cursos";
+      const url = tipoCadastro === "evento"
+        ? "http://localhost:3000/eventos"
+        : "http://localhost:3000/cursos";
 
       axios
         .post(url, formData, {
@@ -89,103 +88,101 @@ import { getToken, isAdmin, isProfessor, getPerfil } from '../utils/auth'; //  I
   };
 
   return (
-    <div className="dashboard-layout">
-      <aside className="sidebar">
-        <div className="sidebar-header">
-          <div className="sidebar-logo">
-            <img src="https://institutocriativo.com.br/images/Logo.svg" alt="Educa+" height="30" />
-          </div>
-        </div>
-        <nav className="sidebar-nav">
-          <ul>
-            <li className="nav-item"><a href="/dashboard" className="nav-link">Dashboard</a></li>
-            <li className="nav-item"><a href="/eventos" className="nav-link active">Eventos</a></li>
-            <li className="nav-item"><a href="/meus-eventos" className="nav-link">Meus Eventos</a></li>
-            <li className="nav-item"><a href="/estatisticas" className="nav-link">Estatísticas</a></li>
-          </ul>
-        </nav>
-      </aside>
+    <>
+      <Header /> {}
 
-      <main className="main-content">
-        <header className="header">
-          <h2>Eventos</h2>
-          <div className="header-actions">
-            {(isAdmin() || isProfessor()) && (
-              <button
-                className="btn btn-primary"
-                onClick={() => document.getElementById('eventModal').showModal()}
+      <div className="dashboard-layout">
+        <aside className="sidebar">
+          <nav className="sidebar-nav">
+            <ul>
+              <li className="nav-item"><a href="/dashboard" className="nav-link">Dashboard</a></li>
+              <li className="nav-item"><a href="/eventos" className="nav-link active">Eventos</a></li>
+              <li className="nav-item"><a href="/meus-eventos" className="nav-link">Meus Eventos</a></li>
+              <li className="nav-item"><a href="/estatisticas" className="nav-link">Estatísticas</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <main className="main-content">
+          <header className="header">
+            <div className="header-actions">
+              {(isAdmin() || isProfessor()) && (
+                <button
+                  className="btn btn-primary"
+                  onClick={() => document.getElementById('eventModal').showModal()}
+                >
+                  Adicionar {tipoCadastro === "evento" ? "Evento" : "Curso"}
+                </button>
+              )}
+            </div>
+          </header>
+
+          <div className="card mb-4">
+            <div className="card-body">
+              <div className="filters">
+                {}
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="card-body">
+              <div className="grid grid-cols-2 gap-4">
+                {eventos.map((ev, idx) => (
+                  <div key={idx} className="event-card">{ev.titulo}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <dialog id="eventModal" className="modal">
+          <div className="modal-content">
+            <form onSubmit={handleSubmit}>
+              <h3>Adicionar Novo {tipoCadastro === 'evento' ? 'Evento' : 'Curso'}</h3>
+
+              <select
+                className="form-control"
+                value={tipoCadastro}
+                onChange={e => setTipoCadastro(e.target.value)}
               >
-                Adicionar {tipoCadastro === "evento" ? "Evento" : "Curso"}
-              </button>
-            )}
+                <option value="evento">Evento</option>
+                <option value="curso">Curso</option>
+              </select>
+
+              {tipoCadastro === 'evento' ? (
+                <>
+                  <input type="text" placeholder="Título" className="form-control" required />
+                  <textarea rows="4" placeholder="Descrição" className="form-control" required></textarea>
+                  <input type="date" className="form-control" required />
+                  <input type="text" placeholder="Local" className="form-control" required />
+                  <input type="file" accept="image/*" onChange={handleImagePreview} className="form-control" required />
+                  {preview && <img src={preview} alt="preview" style={{ maxWidth: '100%', borderRadius: '8px' }} />}
+                </>
+              ) : (
+                <>
+                  <input type="text" placeholder="Título do curso" className="form-control" required />
+                  <textarea rows="4" placeholder="Descrição" className="form-control" required></textarea>
+                  <input type="text" placeholder="Carga horária" className="form-control" required />
+                  <select className="form-control" required>
+                    <option value="Iniciante">Iniciante</option>
+                    <option value="Intermediário">Intermediário</option>
+                    <option value="Avançado">Avançado</option>
+                  </select>
+                  <input type="url" placeholder="Link do curso" className="form-control" required />
+                  <input type="file" accept="image/*" onChange={handleImagePreview} className="form-control" required />
+                  {preview && <img src={preview} alt="preview" style={{ maxWidth: '100%', borderRadius: '8px' }} />}
+                </>
+              )}
+
+              <div style={{ textAlign: 'right', marginTop: '1rem' }}>
+                <button className="btn btn-primary" type="submit">Salvar</button>
+              </div>
+            </form>
           </div>
-        </header>
-
-        <div className="card mb-4">
-          <div className="card-body">
-            <div className="filters">
-              {/* Filtros futuros aqui */}
-            </div>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-body">
-            <div className="grid grid-cols-2 gap-4">
-              {eventos.map((ev, idx) => (
-                <div key={idx} className="event-card">{ev.titulo}</div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </main>
-
-      <dialog id="eventModal" className="modal">
-        <div className="modal-content">
-          <form onSubmit={handleSubmit}>
-            <h3>Adicionar Novo {tipoCadastro === 'evento' ? 'Evento' : 'Curso'}</h3>
-
-            <select
-              className="form-control"
-              value={tipoCadastro}
-              onChange={e => setTipoCadastro(e.target.value)}
-            >
-              <option value="evento">Evento</option>
-              <option value="curso">Curso</option>
-            </select>
-
-            {tipoCadastro === 'evento' ? (
-              <>
-                <input type="text" placeholder="Título" className="form-control" required />
-                <textarea rows="4" placeholder="Descrição" className="form-control" required></textarea>
-                <input type="date" className="form-control" required />
-                <input type="text" placeholder="Local" className="form-control" required />
-                <input type="file" accept="image/*" onChange={handleImagePreview} className="form-control" required />
-                {preview && <img src={preview} alt="preview" style={{ maxWidth: '100%', borderRadius: '8px' }} />}
-              </>
-            ) : (
-              <>
-                <input type="text" placeholder="Título do curso" className="form-control" required />
-                <textarea rows="4" placeholder="Descrição" className="form-control" required></textarea>
-                <input type="text" placeholder="Carga horária" className="form-control" required />
-                <select className="form-control" required>
-                  <option value="Iniciante">Iniciante</option>
-                  <option value="Intermediário">Intermediário</option>
-                  <option value="Avançado">Avançado</option>
-                </select>
-                <input type="url" placeholder="Link do curso" className="form-control" required />
-                <input type="file" accept="image/*" onChange={handleImagePreview} className="form-control" required />
-                {preview && <img src={preview} alt="preview" style={{ maxWidth: '100%', borderRadius: '8px' }} />}
-              </>
-            )}
-
-            <div style={{ textAlign: 'right', marginTop: '1rem' }}>
-              <button className="btn btn-primary" type="submit">Salvar</button>
-            </div>
-          </form>
-        </div>
-      </dialog>
-    </div>
+        </dialog>
+      </div>
+    </>
   );
 };
 

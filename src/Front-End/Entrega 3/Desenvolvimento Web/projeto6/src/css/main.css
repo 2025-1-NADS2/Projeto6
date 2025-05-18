@@ -534,3 +534,12 @@ textarea.form-control {
         grid-template-columns: 1fr;
     }
 }
+.filter-position {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}

@@ -25,7 +25,7 @@ const Cadastro = () => {
       return;
     }
 
-    if (form.perfil === 'admin' && form.codigoAcesso !== 'ADMIN123') {
+    if (form.perfil === 'admin' && form.codigoAcesso !== 'ADM2024') {
       alert('Código de acesso inválido para Administrador.');
       return;
     }

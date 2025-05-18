@@ -277,10 +277,12 @@ a {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
-    min-height: 700px;
-    margin-top: 80px;
+    height: 70vh;
+    margin-top: 70px;
     overflow: hidden;
+    background-image: url('../images/arte.jpg');
+    
+    
 }
 
 .hero-slider {
@@ -1328,6 +1330,7 @@ a {
     
     .hero-content h1 {
         font-size: 36px;
+
     }
     
     .values-grid,
