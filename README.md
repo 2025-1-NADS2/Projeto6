@@ -81,3 +81,9 @@ Com o **InnovateDesk**, o Instituto Criativo estará mais preparado para ampliar
  <img src="https://github.com/user-attachments/assets/0040ebea-0fac-49c3-800f-a4504b36dfba" alt="Page Inicial" width="1000"/> </p>
 
 # 🛠 Estrutura de Pasta
+
+
+## 📋 Licença/License
+
+[InnovateDesk – O Painel da Inovação](#) by [Eduardo Araujo](#), [Luan Rocha](#) e [Vitor Melo](#) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+[![CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
