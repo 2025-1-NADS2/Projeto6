@@ -18,3 +18,4 @@ O diagrama foi criado utilizando a **linguagem Mermaid**, um recurso simples e e
 O diagrama completo do mapa de navegação foi desenvolvido com o Mermaid e está disponível para visualização online.
 
 Para acessar o diagrama, [clique aqui](https://www.mermaidchart.com/raw/ee99e6db-014c-46df-8e50-2dcdc09f1a39?theme=light&version=v0.1&format=svg).
+Para acessar o Fluxograma no figma, [Clique aqui](https://www.figma.com/board/rf7Z7iUSzP0gfEvtA5WKTv/Untitled?t=aI4aSrlhla8mDnTO-6).
